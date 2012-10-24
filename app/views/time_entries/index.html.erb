@@ -1,0 +1,31 @@
+<h1>Listing time_entries</h1>
+
+<table>
+  <tr>
+    <th>Project</th>
+    <th>User</th>
+    <th>Int</th>
+    <th>Entrycode</th>
+    <th>Entrytime</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @time_entries.each do |time_entry| %>
+  <tr>
+    <td><%= time_entry.project_id %></td>
+    <td><%= time_entry.user_id %></td>
+    <td><%= time_entry.int %></td>
+    <td><%= time_entry.entryCode %></td>
+    <td><%= time_entry.entryTime %></td>
+    <td><%= link_to 'Show', time_entry %></td>
+    <td><%= link_to 'Edit', edit_time_entry_path(time_entry) %></td>
+    <td><%= link_to 'Destroy', time_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Time entry', new_time_entry_path %>

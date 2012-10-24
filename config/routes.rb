@@ -1,4 +1,10 @@
 TimeSheep::Application.routes.draw do
+  resources :time_entries
+
+  resources :projects
+
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
