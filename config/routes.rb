@@ -1,4 +1,8 @@
 TimeSheep::Application.routes.draw do
+  get "welcome/home"
+
+  get "welcome/about"
+
   resources :time_entries
 
   resources :projects
