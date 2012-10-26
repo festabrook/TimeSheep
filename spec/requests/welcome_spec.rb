@@ -13,6 +13,16 @@ describe "Welcome" do
       visit '/welcome/home'
       page.should have_selector('title', :text => "Home")
     end
+
+    it "should have introductory text" do
+    	visit '/welcome/home'
+    	page.should have_selector('p', :text => "Please login to track your hours.")
+    end
+
+    it "should have a login text box" do
+    	visit '/welcome/home'
+    	page.should have_selector('textbox', :name => "login")
+    end
   end
 
   describe "About page" do
