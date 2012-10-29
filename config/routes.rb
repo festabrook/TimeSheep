@@ -1,14 +1,13 @@
 TimeSheep::Application.routes.draw do
-  get "welcome/home"
-
-  get "welcome/about"
-
+  root to: 'welcome#home' 
+  
   resources :time_entries
-
   resources :projects
-
   resources :users
-
+  
+  match '/signup', to: 'users#new'
+  match '/about', to: 'welcome#about'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
